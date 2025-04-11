@@ -1,0 +1,15 @@
+rm -rf anime-face-voter && \
+mkdir anime-face-voter && cd anime-face-voter && \
+git init && \
+echo 'Flask\ngunicorn' > requirements.txt && \
+mkdir -p static/output templates && \
+touch votes.json && \
+curl -o app.py https://gist.githubusercontent.com/chatgpt-openai-user/anime-app/main/app.py && \
+curl -o templates/index.html https://gist.githubusercontent.com/chatgpt-openai-user/anime-app/main/index.html && \
+curl -o templates/leaderboard.html https://gist.githubusercontent.com/chatgpt-openai-user/anime-app/main/leaderboard.html && \
+curl -o render.yaml https://gist.githubusercontent.com/chatgpt-openai-user/anime-app/main/render.yaml && \
+curl -o README.md https://gist.githubusercontent.com/chatgpt-openai-user/anime-app/main/README.md && \
+git remote add origin https://github.com/Deway356/anime-face-voter.git && \
+git add . && \
+git commit -m 'Initial commit: Anime face voter app' && \
+git push -u origin master
